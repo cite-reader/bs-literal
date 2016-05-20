@@ -1,0 +1,6 @@
+[package]
+name = "bs-literal"
+version = "0.1.0"
+authors = ["Alex Hill <alexander.d.hill.89@gmail.com>"]
+
+[dependencies]

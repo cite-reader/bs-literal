@@ -1,0 +1,27 @@
+= Bytestring Literals =
+Alex Hill <alexander.d.hill.89@gmail.com>
+
+This is a dumb little tool for creating Rust byte-string literals
+
+== Use ==
+
+`bs-literal` acts as a filter:
+
+----
+$ echo -n ˙ ͜ʟ˙ | bs-literal
+\xcb\x99\xe2\x80\x86\xcd\x9c\xca\x9f\xcb\x99
+----
+
+The output can then be copied and pasted into a `b""` literal in Rust code.
+
+Alternatively, you can name a single file as an argument, subject to normal argument-parsing conventions. See `--help` for more.
+
+== Bugs / Future Work / Whatever ==
+
+Any problem unceremoniously panics, resulting in an ugly error message.
+
+There's no option to elide the trailing newline (pipe through `perl -pe chomp` or something).
+
+== But why? ==
+
+I needed some prebaked HTTP requests to test a parser with at one point and slapped version zero together.
